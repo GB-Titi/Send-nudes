@@ -50,7 +50,7 @@ void MyWindow::motionNotify(int mouse_x,int mouse_y,int button)
 void MyWindow::buttonRelease(int mouse_x,int mouse_y,int button)
 {
  if(button == 1 && pforme != nullptr) // Si on clique sur l'ancre d'une forme
-   pforme->setAncre(mouse_x,mouse_y);
+   pforme->setAncre(mouse_x,mouse_y); 
  sendExpose();
 }
 
@@ -85,7 +85,8 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
      case EZKeySym::_7: if(pforme) pforme->setCouleur(ez_magenta); break;
      case EZKeySym::KP_Add: 	 if(pforme) pforme->addThick();	   break;
      case EZKeySym::KP_Subtract: if(pforme) pforme->subThick();    break;
-     case EZKeySym::h:
+     case EZKeySym::F: if(pforme) pforme->setRemplir();    break;
+	 case EZKeySym::h:
       cout << "q : quitter" << endl
            << "h : cette aide" << endl
            << "E : ecrire la liste des formes sur la console" << endl
@@ -108,11 +109,11 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
            << "t : crée un triangle" << endl
            ;
       break;
-     case EZKeySym::r: formes.ajouter(new Rectangle(ez_black,1,getWidth()/2-25,getHeight()/2-25,getWidth()/2+25,getHeight()/2+25)); break;
-     case EZKeySym::e: formes.ajouter(new Ellipse(ez_black,1,getWidth()/2-25,getHeight()/2-15,50,30)); break;
-     case EZKeySym::s: formes.ajouter(new Carre(ez_black,1,getWidth()/2-25,getHeight()/2-25,50)); break;
-     case EZKeySym::c: formes.ajouter(new Cercle(ez_black,1,getWidth()/2-25,getHeight()/2-25,25)); break;
-     case EZKeySym::t: formes.ajouter(new Triangle(ez_black,1,getWidth()/2,getHeight()/2-50,getWidth()/2-25,getHeight()/2-30,getWidth()/2+25,getHeight()/2-30)); break;
+     case EZKeySym::r: formes.ajouter(new Rectangle(ez_black,1,0,getWidth()/2-25,getHeight()/2-25,getWidth()/2+25,getHeight()/2+25)); break;
+     case EZKeySym::e: formes.ajouter(new Ellipse(ez_black,1,0,getWidth()/2-25,getHeight()/2-15,50,30)); break;
+     case EZKeySym::s: formes.ajouter(new Carre(ez_black,1,0,getWidth()/2-25,getHeight()/2-25,50)); break;
+     case EZKeySym::c: formes.ajouter(new Cercle(ez_black,1,0,getWidth()/2-25,getHeight()/2-25,25)); break;
+     case EZKeySym::t: formes.ajouter(new Triangle(ez_black,1,0,getWidth()/2,getHeight()/2-50,getWidth()/2-25,getHeight()/2-30,getWidth()/2+25,getHeight()/2-30)); break;
      default:
       break;
     }

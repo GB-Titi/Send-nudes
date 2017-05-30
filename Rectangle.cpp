@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Rectangle.hpp"
 
-Rectangle::Rectangle(ulong color, int thick, uint x, uint y, uint _hauteur, uint _largeur)
-	: Forme(color, thick, x, y), hauteur(_hauteur), largeur(_largeur)
+Rectangle::Rectangle(ulong color, int thick, bool remplir, uint x, uint y, uint _hauteur, uint _largeur)
+	: Forme(color, thick, remplir, x, y), hauteur(_hauteur), largeur(_largeur)
 {
 //	cerr << "Construction d'un Rectangle " << perimetre() << endl;
 }
@@ -29,7 +29,7 @@ void Rectangle::dessiner(EZWindow &w,bool isActive) const
 	Point ancre = getAncre();
 	uint x = ancre.getx();
 	uint y = ancre.gety();
-	if(isActive) w.fillRectangle(x-largeur/2, y-hauteur/2, x+largeur/2, y+hauteur/2);
+	if(isActive || getRemplir()) w.fillRectangle(x-largeur/2, y-hauteur/2, x+largeur/2, y+hauteur/2);
 	else w.drawRectangle(x-largeur/2, y-hauteur/2, x+largeur/2, y+hauteur/2);
 }
 

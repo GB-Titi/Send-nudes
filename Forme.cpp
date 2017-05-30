@@ -5,18 +5,18 @@
 #include "Carre.hpp"
 #include "Ellipse.hpp"
 
-Forme::Forme (ulong _couleur, uint _thickness, uint _x, uint _y)
-	: couleur(_couleur), thickness(_thickness), ancre(_x, _y)
+Forme::Forme (ulong _couleur, uint _thickness, bool _remplir, uint _x, uint _y)
+	: couleur(_couleur), thickness(_thickness), remplir(_remplir), ancre(_x, _y)
 {}
 
 Forme::Forme (const Forme &orig)
-	: Forme (orig.couleur, orig.thickness, orig.ancre.getx(), orig.ancre.gety())
+	: Forme (orig.couleur, orig.thickness, orig.remplir, orig.ancre.getx(), orig.ancre.gety())
 {
 //	cerr << "Construction par recopie de Forme";
 }
 
 Forme::Forme(istream &is)
-	: couleur(0), thickness(0), ancre(0,0)
+	: couleur(0), thickness(0), remplir(0), ancre(0,0)
 {
 	is >> couleur >> thickness >> ancre;
 }

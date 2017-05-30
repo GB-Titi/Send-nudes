@@ -2,8 +2,8 @@
 #include <cmath>
 #include "Ellipse.hpp"
 
-Ellipse::Ellipse(ulong color, int thick, uint x, uint y, uint _demiHauteur, uint _demiLargeur)
-	: Forme(color, thick, x, y), demiHauteur(_demiHauteur), demiLargeur(_demiLargeur)
+Ellipse::Ellipse(ulong color, int thick, bool remplir, uint x, uint y, uint _demiHauteur, uint _demiLargeur)
+	: Forme(color, thick, remplir, x, y), demiHauteur(_demiHauteur), demiLargeur(_demiLargeur)
 {
 //	cerr << "Construction d'une Ellipse " << perimetre() << endl;
 }
@@ -30,7 +30,7 @@ void Ellipse::dessiner(EZWindow &w,bool isActive) const
 	Point ancre = getAncre();
 	uint _x = ancre.getx();
 	uint _y = ancre.gety();
-	if(isActive) w.fillCircle(_x-demiLargeur, _y-demiHauteur, _x+demiLargeur, _y+demiHauteur);
+	if(isActive || getRemplir()) w.fillCircle(_x-demiLargeur, _y-demiHauteur, _x+demiLargeur, _y+demiHauteur);
 	else w.drawCircle(_x-demiLargeur, _y-demiHauteur, _x+demiLargeur, _y+demiHauteur);
 }
 

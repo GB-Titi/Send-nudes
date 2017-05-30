@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Carre.hpp"
 
-Carre::Carre(ulong color, int thick, uint x, uint y, uint _cote)
-	: Forme(color, thick, x, y), cote(_cote)
+Carre::Carre(ulong color, int thick, bool remplir, uint x, uint y, uint _cote)
+	: Forme(color, thick, remplir, x, y), cote(_cote)
 {
 //	cerr << "Construction d'un Carre " << perimetre() << endl;
 }
@@ -29,7 +29,7 @@ void Carre::dessiner(EZWindow &w, bool isActive) const
 	Point ancre = getAncre();
 	uint _x = ancre.getx();
 	uint _y = ancre.gety();
-	if(isActive) w.fillRectangle(_x-cote, _y-cote, _x+cote, _y+cote);
+	if(isActive || getRemplir()) w.fillRectangle(_x-cote, _y-cote, _x+cote, _y+cote);
 	else w.drawRectangle(_x-cote, _y-cote, _x+cote, _y+cote);
 }
 

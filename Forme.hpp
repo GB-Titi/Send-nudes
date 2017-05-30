@@ -8,11 +8,12 @@ class Forme {
 	private :
 		ulong couleur;
 		int thickness;
+		bool remplir;
 		Point ancre;
 		bool selected;
 	
 	public :
-		Forme (ulong color, uint _thickness, uint x, uint y);
+		Forme (ulong color, uint _thickness, bool _remplir, uint x, uint y);
 		Forme (const Forme &orig);
 		Forme (istream &is);
 		virtual ~Forme();
@@ -26,6 +27,9 @@ class Forme {
 		bool isOver(uint x, uint y);
 			
 		virtual void dessiner(EZWindow &fenetre, bool active = false) const;
+		inline void setRemplir() {if (remplir) remplir = false; else remplir = true;}
+		inline bool getRemplir() const {return remplir;}
+		
 		virtual double perimetre () const = 0;
 		virtual void ecrire(ostream &os) const = 0;
 		

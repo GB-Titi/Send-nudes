@@ -10,10 +10,11 @@ class Ellipse : public Forme {
 		void ecrire (ostream &os) const override;
 
 	public :
-		Ellipse(ulong color, int thick, uint x, uint y, uint demiHauteur, uint demiLargeur);
+		Ellipse(ulong color, int thick, bool remplir, uint x, uint y, uint demiHauteur, uint demiLargeur);
 		Ellipse(istream &is);
 		~Ellipse();
 		virtual void dessiner (EZWindow &fenetre, bool isActive = false) const;
+		//inline void setRemplir() {if (remplir) remplir = false; else remplir = true;}
 		inline uint getDemiLargeur () const {return demiLargeur;}
 		inline void setDemiLargeur (uint _demiLargeur) { demiLargeur = _demiLargeur; }
 		inline uint getDemiHauteur () const { return demiHauteur; }

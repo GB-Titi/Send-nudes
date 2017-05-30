@@ -11,10 +11,11 @@ class Triangle : public Forme
 		void ecrire (ostream &os) const override;
 
 	public :
-		Triangle(ulong color, int thick, uint x, uint y, uint x2, uint y2, uint x3, uint y3);
+		Triangle(ulong color, int thick, bool remplir, uint x, uint y, uint x2, uint y2, uint x3, uint y3);
 		Triangle(istream &is);
 		~Triangle();
 		virtual void dessiner (EZWindow &fenetre, bool isActive = false) const;
+		//inline void setRemplir() {if (remplir) remplir = false; else remplir = true;}
 		inline uint getWidth () const {return width;}
 		inline void setWidth (uint _width) { width = _width; }
 		inline uint getHeight () const { return height; }

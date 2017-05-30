@@ -19,7 +19,6 @@ class Formes {
 		friend ostream &operator<< (ostream &os, const Formes &f);
 		void sauver(ostream &os) const;
 		void charger(istream &is);
-
 };
 
 #endif

@@ -2,8 +2,8 @@
 #include <cmath>
 #include "Triangle.hpp"
 
-Triangle::Triangle(ulong color, int thick, uint x, uint y, uint x2, uint y2, uint x3, uint y3)
-	:Forme(color, thick, x, y), height(x2), width(y2)
+Triangle::Triangle(ulong color, int thick, bool remplir, uint x, uint y, uint x2, uint y2, uint x3, uint y3)
+	:Forme(color, thick, remplir, x, y), height(x2), width(y2)
 {
 //	cerr << "Construction d'un Triangle " << perimetre() << endl;
 }
@@ -30,7 +30,7 @@ void Triangle::dessiner(EZWindow &w,bool isActive) const
 	Point ancre = getAncre();
 	uint x = ancre.getx();
 	uint y = ancre.gety();
-	if(isActive) w.fillTriangle(x-width/2, y, x+width/2, y, x, y-height);
+	if(isActive || getRemplir()) w.fillTriangle(x-width/2, y, x+width/2, y, x, y-height);
 	else w.drawTriangle(x-width/2, y, x+width/2, y, x, y-height);
 }
 
