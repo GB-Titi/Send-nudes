@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Cercle.hpp"
 
 Cercle::Cercle(ulong color, int thick, bool remplir, uint x, uint y, uint _side)
@@ -20,7 +21,7 @@ Cercle::~Cercle()
 
 double Cercle::perimetre() const
 {
-    return (2*3.14159265359*radius);
+    return (2*M_PI*radius);
 }
 
 void Cercle::dessiner(EZWindow &w, bool isActive) const
