@@ -20,7 +20,7 @@ Carre::~Carre()
 
 double Carre::perimetre() const
 {
-    return (cote * 4);
+    return (cote*4);
 }
 
 void Carre::dessiner(EZWindow &w, bool isActive) const
@@ -35,5 +35,5 @@ void Carre::dessiner(EZWindow &w, bool isActive) const
 
 void Carre::ecrire(ostream &os) const
 {
-    os << cote;
+    os << "Carre " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << cote;
 }

@@ -35,5 +35,5 @@ void Rectangle::dessiner(EZWindow &w,bool isActive) const
 
 void Rectangle::ecrire(ostream &os) const
 {
-	os << hauteur << " " << largeur;
+	os << "Carre " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << hauteur << " " << largeur;
 }

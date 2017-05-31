@@ -36,5 +36,5 @@ void Ellipse::dessiner(EZWindow &w,bool isActive) const
 
 void Ellipse::ecrire(ostream &os) const
 {
-	os << demiHauteur << " " << demiLargeur;
+	os << "Ellipse " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << demiHauteur << " " << demiLargeur;
 }

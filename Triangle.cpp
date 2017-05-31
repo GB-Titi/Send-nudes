@@ -36,5 +36,5 @@ void Triangle::dessiner(EZWindow &w,bool isActive) const
 
 void Triangle::ecrire(ostream &os) const
 {
-	os << height << " " << width;
+    os << "Triangle " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << height << " " << width;
 }
