@@ -14,7 +14,6 @@ class Ellipse : public Forme {
 		Ellipse(istream &is);
 		~Ellipse();
 		virtual void dessiner (EZWindow &fenetre, bool isActive = false) const;
-		//inline void setRemplir() {if (remplir) remplir = false; else remplir = true;}
 		inline uint getDemiLargeur () const {return demiLargeur;}
 		inline void setDemiLargeur (uint _demiLargeur) { demiLargeur = _demiLargeur; }
 		inline uint getDemiHauteur () const { return demiHauteur; }

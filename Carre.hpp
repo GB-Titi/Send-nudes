@@ -14,8 +14,6 @@ class Carre : public Forme {
         Carre(istream &is);
         ~Carre();
         virtual void dessiner(EZWindow &w, bool isActive = false) const;
-  		//inline void setRemplir() {if (remplir) remplir = false; else remplir = true;}
-
 
         inline uint getCote() const {return cote;}
         inline void setCote (uint _cote) { cote = _cote;}

@@ -11,7 +11,11 @@ Ellipse::Ellipse(ulong color, int thick, bool remplir, uint x, uint y, uint _dem
 Ellipse::Ellipse(istream &is)
 	: Forme(is), demiHauteur(0), demiLargeur(0)
 {
-    is >> demiHauteur >> demiLargeur;
+    bool _thickness = false;
+	uint _remplir = 0;
+    is >> demiHauteur >> demiLargeur >> _thickness >> _remplir;
+	setThickness(_thickness);
+	setRemplir(_remplir);
 }
 
 Ellipse::~Ellipse()
@@ -30,11 +34,11 @@ void Ellipse::dessiner(EZWindow &w,bool isActive) const
 	Point ancre = getAncre();
 	uint _x = ancre.getx();
 	uint _y = ancre.gety();
-	if(isActive || getRemplir()) w.fillCircle(_x-demiLargeur, _y-demiHauteur, _x+demiLargeur, _y+demiHauteur);
+	if(getRemplir()) w.fillCircle(_x-demiLargeur, _y-demiHauteur, _x+demiLargeur, _y+demiHauteur);
 	else w.drawCircle(_x-demiLargeur, _y-demiHauteur, _x+demiLargeur, _y+demiHauteur);
 }
 
 void Ellipse::ecrire(ostream &os) const
 {
-	os << "Ellipse " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << demiHauteur << " " << demiLargeur;
+	os << "Ellipse " << getCouleur() << " " << getAncre().getx() << " " << getAncre().gety() << " " << demiHauteur << " " << demiLargeur;
 }

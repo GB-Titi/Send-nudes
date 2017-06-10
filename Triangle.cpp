@@ -11,7 +11,11 @@ Triangle::Triangle(ulong color, int thick, bool remplir, uint x, uint y, uint x2
 Triangle::Triangle(istream &is)
 	:Forme(is), height(0), width(0)
 {
-	is >> height >> width;
+	bool _thickness = false;
+	uint _remplir = 0;
+    is >> height >> width >> _thickness >> _remplir;
+	setThickness(_thickness);
+	setRemplir(_remplir);
 }
 
 Triangle::~Triangle()
@@ -30,11 +34,11 @@ void Triangle::dessiner(EZWindow &w,bool isActive) const
 	Point ancre = getAncre();
 	uint x = ancre.getx();
 	uint y = ancre.gety();
-	if(isActive || getRemplir()) w.fillTriangle(x-width/2, y, x+width/2, y, x, y-height);
+	if(getRemplir()) w.fillTriangle(x-width/2, y, x+width/2, y, x, y-height);
 	else w.drawTriangle(x-width/2, y, x+width/2, y, x, y-height);
 }
 
 void Triangle::ecrire(ostream &os) const
 {
-    os << "Triangle " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << height << " " << width;
+    os << "Triangle " << getCouleur() << " " << getAncre().getx() << " " << getAncre().gety() << " " << height << " " << width;
 }

@@ -15,7 +15,6 @@ class Triangle : public Forme
 		Triangle(istream &is);
 		~Triangle();
 		virtual void dessiner (EZWindow &fenetre, bool isActive = false) const;
-		//inline void setRemplir() {if (remplir) remplir = false; else remplir = true;}
 		inline uint getWidth () const {return width;}
 		inline void setWidth (uint _width) { width = _width; }
 		inline uint getHeight () const { return height; }

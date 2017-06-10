@@ -65,13 +65,13 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
       break;
      case EZKeySym::S:
       {
-       ofstream f("formes.txt");
+       ofstream f("Formes.txt");
        formes.sauver(f);
       }
       break;
      case EZKeySym::C:
       {
-       ifstream f("formes.txt");
+       ifstream f("Formes.txt");
        formes.charger(f);
       }
       break;
@@ -85,7 +85,7 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
      case EZKeySym::_7: if(pforme) pforme->setCouleur(ez_magenta); break;
      case EZKeySym::KP_Add: 	 if(pforme) pforme->addThick();	   break;
      case EZKeySym::KP_Subtract: if(pforme) pforme->subThick();    break;
-     case EZKeySym::F: if(pforme) pforme->setRemplir();    break;
+     case EZKeySym::F: if(pforme) pforme->Remplir();    break;
 	 case EZKeySym::h:
       cout << "q : quitter" << endl
            << "h : cette aide" << endl

@@ -3,7 +3,7 @@
 #include "Cercle.hpp"
 
 Cercle::Cercle(ulong color, int thick, bool remplir, uint x, uint y, uint _diametre)
-	: Forme(color, thick, remplir, x, y), diametre(_diametre), radius(_diametre/2)
+	: Forme(color, thick, remplir, x, y), diametre(_diametre)
 {
 //	cerr << "Construction d'un Cercle " << perimetre() << endl;
 }
@@ -11,7 +11,11 @@ Cercle::Cercle(ulong color, int thick, bool remplir, uint x, uint y, uint _diame
 Cercle::Cercle(istream &is)
 	: Forme(is), diametre(0)
 {
-    is >> diametre;
+    bool _thickness = false;
+	uint _remplir = 0;
+    is >> diametre >> _thickness >> _remplir;
+	setThickness(_thickness);
+	setRemplir(_remplir);
 }
 
 Cercle::~Cercle()
@@ -21,7 +25,7 @@ Cercle::~Cercle()
 
 double Cercle::perimetre() const
 {
-    return (2*M_PI*radius);
+    return (M_PI*diametre);
 }
 
 void Cercle::dessiner(EZWindow &w, bool isActive) const
@@ -30,11 +34,11 @@ void Cercle::dessiner(EZWindow &w, bool isActive) const
 	Point ancre = getAncre();
 	uint _x = ancre.getx();
 	uint _y = ancre.gety();
-	if(isActive || getRemplir()) w.fillCircle(_x-diametre, _y-diametre, _x+diametre, _y+diametre);
+	if(getRemplir()) w.fillCircle(_x-diametre, _y-diametre, _x+diametre, _y+diametre);
 	else w.drawCircle(_x-diametre, _y-diametre, _x+diametre, _y+diametre);
 }
 
 void Cercle::ecrire(ostream &os) const
 {
-    os << "Cercle " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << diametre;
+    os << "Cercle " << getCouleur() << " " << getAncre().getx() << " " << getAncre().gety() << " " << diametre;
 }

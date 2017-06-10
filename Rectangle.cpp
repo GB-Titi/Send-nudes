@@ -10,7 +10,11 @@ Rectangle::Rectangle(ulong color, int thick, bool remplir, uint x, uint y, uint 
 Rectangle::Rectangle(istream &is)
 	: Forme(is), hauteur(0), largeur(0)
 {
-	is >> hauteur >> largeur;
+	bool _thickness = false;
+	uint _remplir = 0;
+    is >> hauteur >> largeur >> _thickness >> _remplir;
+	setThickness(_thickness);
+	setRemplir(_remplir);
 }
 
 Rectangle::~Rectangle()
@@ -29,11 +33,11 @@ void Rectangle::dessiner(EZWindow &w,bool isActive) const
 	Point ancre = getAncre();
 	uint x = ancre.getx();
 	uint y = ancre.gety();
-	if(isActive || getRemplir()) w.fillRectangle(x-largeur/2, y-hauteur/2, x+largeur/2, y+hauteur/2);
+	if(getRemplir()) w.fillRectangle(x-largeur/2, y-hauteur/2, x+largeur/2, y+hauteur/2);
 	else w.drawRectangle(x-largeur/2, y-hauteur/2, x+largeur/2, y+hauteur/2);
 }
 
 void Rectangle::ecrire(ostream &os) const
 {
-	os << "Carre " << getCouleur() << " " << getThickness() << " " << getRemplir() << " " << getAncre().getx() << " " << getAncre().gety() << " " << hauteur << " " << largeur;
+	os << "Rectangle " << getCouleur() << " " << getAncre().getx() << " " << getAncre().gety() << " " << hauteur << " " << largeur;
 }

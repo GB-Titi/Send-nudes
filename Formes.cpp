@@ -40,7 +40,7 @@ void Formes::sauver(ostream &os) const
 {
 	os << nbformes << endl;
 	for (size_t i=0; i < nbformes; i++)
-		os << *formes[i] << endl;
+		os << *formes[i] << " " << formes[i]->getThickness() << " " << formes[i]->getRemplir() << endl;
 }
 
 ostream &operator<<(ostream &os, const Formes &f)
@@ -50,14 +50,14 @@ ostream &operator<<(ostream &os, const Formes &f)
 	return os;
 }
 
-void Formes::charger (istream &is)
+void Formes::charger(istream &is)
 {
-	for (size_t i=0; i < nbformes; i++)
+    for (size_t i=0; i < nbformes; i++)
 		delete formes[i];
-	nbformes=0;
-	size_t combien = 0;
-	is >> combien;
-	if (combien < maxformes)
+    nbformes=0;
+    size_t combien = 0;
+    is >> combien;
+    if (combien < maxformes)
 		for (size_t i=0; i < combien; i++)
 			ajouter(Forme::charger(is));
 }

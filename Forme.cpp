@@ -49,7 +49,7 @@ void Forme::dessiner(EZWindow &w, bool isActive) const
 
 void Forme::ecrire(ostream &os) const
 {
-	os << "Forme " << couleur << " " << thickness << " " << remplir << " " << ancre;
+	os << "Forme " << couleur << " " << ancre;
 }
 
 ostream &operator<<(ostream &os, const Forme &f)
@@ -60,18 +60,18 @@ ostream &operator<<(ostream &os, const Forme &f)
 
 Forme *Forme::charger(istream &is)
 {
-	string type_forme;
-	is >> type_forme;
-	if (type_forme == "Rectangle")
+    string type_forme;
+    is >> type_forme;
+    if (type_forme == "Rectangle")
 		return new Rectangle(is);
-	else if (type_forme == "Ellipse")
+    else if (type_forme == "Ellipse")
 		return new Ellipse(is);
-	else if (type_forme == "Carre")
+    else if (type_forme == "Carre")
 		return new Carre(is);
-	else if (type_forme == "Cercle")
+    else if (type_forme == "Cercle")
 		return new Cercle(is);
-	else if (type_forme == "Triangle")
+    else if (type_forme == "Triangle")
 		return new Triangle(is);
-	else
+    else
 		throw runtime_error ("Type de forme inconnu");
 }
