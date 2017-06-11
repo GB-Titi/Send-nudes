@@ -14,7 +14,7 @@ class Rectangle : public Forme
 		Rectangle(ulong color, int thick, bool remplir, uint x, uint y, uint largeur, uint hauteur);
 		Rectangle(istream &is);
 		~Rectangle();
-		virtual void dessiner (EZWindow &fenetre, bool isActive = false) const;
+		virtual void dessiner (EZWindow &fenetre/*, bool isActive = false*/) const;
 		inline uint getLargeur () const {return largeur;}
 		inline void setLargeur (uint _largeur) { largeur = _largeur; }
 		inline uint getHauteur () const { return hauteur; }

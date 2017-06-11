@@ -27,7 +27,7 @@ MyWindow::~MyWindow()
 void MyWindow::expose()
 {
  formes.dessiner(*this);
- if(pforme!=nullptr) pforme->dessiner(*this,true);
+ if(pforme!=nullptr) pforme->dessiner(*this/*,true*/);
  setColor(ez_black);
  setThick(1);
  drawText(EZAlign::TL,3,3,"h : affiche l'aide sur la console");

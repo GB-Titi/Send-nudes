@@ -27,7 +27,7 @@ double Rectangle::perimetre() const
 	return (hauteur+largeur)*2;
 }
 
-void Rectangle::dessiner(EZWindow &w,bool isActive) const
+void Rectangle::dessiner(EZWindow &w/*,bool isActive*/) const
 {
 	Forme::dessiner(w);
 	Point ancre = getAncre();

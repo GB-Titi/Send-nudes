@@ -28,7 +28,7 @@ double Ellipse::perimetre() const
 	return ((2*3.14159265359)*sqrt(0.5*(((demiHauteur/2)*(demiHauteur/2))+((demiLargeur/2)*(demiLargeur/2)))));
 }
 
-void Ellipse::dessiner(EZWindow &w,bool isActive) const
+void Ellipse::dessiner(EZWindow &w/*, bool isActive*/) const
 {
 	Forme::dessiner(w);
 	Point ancre = getAncre();

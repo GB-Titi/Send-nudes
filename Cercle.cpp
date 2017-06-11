@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include "Cercle.hpp"
 
 Cercle::Cercle(ulong color, int thick, bool remplir, uint x, uint y, uint _diametre)
@@ -25,10 +24,10 @@ Cercle::~Cercle()
 
 double Cercle::perimetre() const
 {
-    return (M_PI*diametre);
+    return (3.14159265358979323846*diametre);
 }
 
-void Cercle::dessiner(EZWindow &w, bool isActive) const
+void Cercle::dessiner(EZWindow &w/*, bool isActive*/) const
 {
 	Forme::dessiner(w);
 	Point ancre = getAncre();

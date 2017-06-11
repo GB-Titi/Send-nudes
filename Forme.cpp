@@ -37,12 +37,12 @@ bool Forme::isOver(uint x, uint y)
 	return ancre.isOver(x,y);
 }
 
-void Forme::dessiner(EZWindow &w, bool isActive) const
+void Forme::dessiner(EZWindow &w/*, bool isActive*/) const
 {
 	w.setDoubleBuffer(1);
 	w.setColor(ez_black);
 	w.setThick(1);
-	ancre.dessiner(w, isActive);
+	ancre.dessiner(w/*, isActive*/);
 	w.setColor(couleur);
 	w.setThick(thickness);
 }

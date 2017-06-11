@@ -27,7 +27,7 @@ double Carre::perimetre() const
     return (cote*4);
 }
 
-void Carre::dessiner(EZWindow &w, bool isActive) const
+void Carre::dessiner(EZWindow &w/*, bool isActive*/) const
 {
 	Forme::dessiner(w);
 	Point ancre = getAncre();
