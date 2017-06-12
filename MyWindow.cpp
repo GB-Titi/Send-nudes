@@ -113,7 +113,7 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
      case EZKeySym::e: formes.ajouter(new Ellipse(ez_black,1,0,getWidth()/2-25,getHeight()/2-15,50,30)); break;
      case EZKeySym::s: formes.ajouter(new Carre(ez_black,1,0,getWidth()/2-25,getHeight()/2-25,50)); break;
      case EZKeySym::c: formes.ajouter(new Cercle(ez_black,1,0,getWidth()/2-25,getHeight()/2-25,25)); break;
-     case EZKeySym::t: formes.ajouter(new Triangle(ez_black,1,0,getWidth()/2,getHeight()/2-50,getWidth()/2-25,getHeight()/2-30,getWidth()/2+25,getHeight()/2-30)); break;
+     case EZKeySym::t: formes.ajouter(new Triangle(ez_black,1,0,getWidth()/2,getHeight()/2-50,getWidth()/2-50,getHeight()/2-10,getWidth()/2+50,getHeight()/2-10)); break;
      default:
       break;
     }

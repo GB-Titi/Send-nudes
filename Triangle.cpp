@@ -38,8 +38,8 @@ void Triangle::dessiner(EZWindow &w/*,bool isActive*/) const
 	Point ancre = getAncre();
 	uint x = ancre.getx();
 	uint y = ancre.gety();
-	if(getRemplir()) w.fillTriangle(x, y, x-25, y+20, x+25, y+20);
-	else w.drawTriangle(x, y, x-25, y+20, x+25, y+20);;
+	if(getRemplir()) w.fillTriangle(x, y, x-50, y+40, x+50, y+40);
+	else w.drawTriangle(x, y, x-50, y+40, x+50, y+40);;
 }
 
 
