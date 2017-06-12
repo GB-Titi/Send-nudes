@@ -4,9 +4,7 @@
 
 Ellipse::Ellipse(ulong color, int thick, bool remplir, uint x, uint y, uint _demiHauteur, uint _demiLargeur)
 	: Forme(color, thick, remplir, x, y), demiHauteur(_demiHauteur), demiLargeur(_demiLargeur)
-{
-//	cerr << "Construction d'une Ellipse " << perimetre() << endl;
-}
+{}
 
 Ellipse::Ellipse(istream &is)
 	: Forme(is), demiHauteur(0), demiLargeur(0)
@@ -19,9 +17,7 @@ Ellipse::Ellipse(istream &is)
 }
 
 Ellipse::~Ellipse()
-{
-//	cerr << "Destruction de Ellipse" << endl;
-}
+{}
 
 double Ellipse::perimetre() const
 {

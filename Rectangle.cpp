@@ -3,9 +3,7 @@
 
 Rectangle::Rectangle(ulong color, int thick, bool remplir, uint x, uint y, uint _hauteur, uint _largeur)
 	: Forme(color, thick, remplir, x, y), hauteur(_hauteur), largeur(_largeur)
-{
-//	cerr << "Construction d'un Rectangle " << perimetre() << endl;
-}
+{}
 
 Rectangle::Rectangle(istream &is)
 	: Forme(is), hauteur(0), largeur(0)
@@ -18,9 +16,7 @@ Rectangle::Rectangle(istream &is)
 }
 
 Rectangle::~Rectangle()
-{
-//	cerr << "Destruction de Rectangle" << endl;
-}
+{}
 
 double Rectangle::perimetre() const
 {

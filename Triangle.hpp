@@ -6,8 +6,8 @@
 class Triangle : public Forme
 {
 	private :
-		Point ancre2;
-		Point ancre3;
+		Point ancre2; // Deuxième point du triangle.
+		Point ancre3; // Troisième point du triangle.
 		void ecrire (ostream &os) const override;
 
 	public :

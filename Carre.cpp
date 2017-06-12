@@ -3,9 +3,7 @@
 
 Carre::Carre(ulong color, int thick, bool remplir, uint x, uint y, uint _cote)
 	: Forme(color, thick, remplir, x, y), cote(_cote)
-{
-//	cerr << "Construction d'un Carre " << perimetre() << endl;
-}
+{}
 
 Carre::Carre(istream &is)
 	: Forme(is), cote(0)
@@ -18,9 +16,7 @@ Carre::Carre(istream &is)
 }
 
 Carre::~Carre()
-{
-//	cerr << "Destruction de Carre" << endl;
-}
+{}
 
 double Carre::perimetre() const
 {

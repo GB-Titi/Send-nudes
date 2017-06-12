@@ -6,7 +6,7 @@
 class Carre : public Forme {
 
   private :
-		uint cote;
+		uint cote; // Côté du carré.
 		void ecrire (ostream &os) const override;
 
   public :
@@ -15,8 +15,14 @@ class Carre : public Forme {
         ~Carre();
         virtual void dessiner(EZWindow &w/*, bool isActive = false*/) const;
 
-        inline uint getCote() const {return cote;}
+		// Fonction retournant la valeur du côté du carré.
+		//
+		inline uint getCote() const {return cote;}		
+		
+		// Fonction permettant de modifier la valeur du côté du carré.
+		//
         inline void setCote (uint _cote) { cote = _cote;}
+        
         double perimetre() const override;
 };
 

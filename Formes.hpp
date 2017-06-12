@@ -4,11 +4,12 @@
 #include "Point.hpp"
 #include "Forme.hpp"
 
-class Formes {
+class Formes
+{
 	private :
-		const size_t maxformes;
-		size_t nbformes;
-		Forme **formes;
+		const size_t maxformes; // Taille du tableau / Nombre maximal de formes pouvant êtres créées.
+		size_t nbformes; // Nombre de formes créées.
+		Forme **formes; // Tableau contenant les formes (pointeurs) créées.
 	
 	public :
 		Formes(size_t taille = 200);

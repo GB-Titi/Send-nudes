@@ -9,9 +9,9 @@ class Forme
 		ulong couleur; // Détermine la couleur de la forme.
 		int thickness; // Détermine l'épaisseur de la forme.
 		bool remplir;  // Détermine si la forme est pleine ou vide.
-		Point ancre; 
-		virtual void ecrire(ostream &os) const = 0;
-
+		Point ancre;   // Point commun à chaque forme qui permet de la sélectionner.
+		virtual void ecrire(ostream &os) const = 0; // Fonction permettant l'écriture d'une forme.
+		
 	
 	public :
 		// Constructeur.
@@ -25,7 +25,7 @@ class Forme
 		//
 		virtual ~Forme();
 		
-		// Fonction permettant d'obtenir la couleur actuelle d'une forme.
+		// Fonction ertournant la couleur actuelle d'une forme.
 		//
 		inline ulong getCouleur() const {return couleur;}
 				
@@ -41,7 +41,7 @@ class Forme
 		//
 		inline void subThick() {if (thickness>1) thickness -= 1;}
 		
-		// Fonction permettant d'obtenir l'épaisseur actuelle d'une forme.
+		// Fonction retournant l'épaisseur actuelle d'une forme.
 		//
 		inline int getThickness() const {return thickness;}
 		
@@ -49,10 +49,17 @@ class Forme
 		//
 		inline void setThickness(int _thickness) {thickness = _thickness;}
 		
-		
+		// Fonction retournant les coordonnées d'une ancre.
+		//
 		inline const Point &getAncre() const {return ancre;}
-		void setAncre(uint x, uint y);
-		bool isOver(uint x, uint y);
+		
+		// Fonction permettant de modifier les coordonnées d'une ancre.
+		//
+		void setAncre(uint x, uint y) {ancre.setxy(x,y);}
+
+		// Fonction retournant un booléen : vrai si les coordonnées passées en paramètre correspondent à l'ancre d'une forme et faux le cas contraire.
+		//
+		bool isOver(uint x, uint y) {return ancre.isOver(x,y);}
 			
 		virtual void dessiner(EZWindow &fenetre/*, bool active = false*/) const;
 		
@@ -71,7 +78,9 @@ class Forme
 		virtual double perimetre () const = 0;
 		
 		friend ostream &operator<<(ostream &os, const Forme &forme);
-				
+			
+		// Fonction permettant de charger des formes sauvegardées.
+		//
 		static Forme* charger(istream &is);
 };
 

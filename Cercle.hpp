@@ -6,7 +6,7 @@
 class Cercle : public Forme {
 
 	private :
-		uint diametre;
+		uint diametre; // Diamètre du cercle.
 		void ecrire (ostream &os) const override;
 
 	public :
@@ -14,7 +14,13 @@ class Cercle : public Forme {
 		Cercle(istream &is);
 		~Cercle();
 		virtual void dessiner(EZWindow &w/*, bool isActive = false*/) const;
+		
+		// Fonction retournant le diamètre du cercle.
+		//
 		inline uint getDiametre() const {return diametre;}
+		
+		// Fonction permettant de modifier le diamètre du cercle.
+		//
 		inline void setDiametre (uint _diametre) { diametre = _diametre;}
 		double perimetre() const override;
 };

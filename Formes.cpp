@@ -9,7 +9,6 @@ Formes::Formes(size_t taille)
 
 Formes::~Formes()
 {
-//	cerr << "Destruction de Formes" << endl;
 	for (size_t i=0; i < nbformes; i++)
 		delete formes[i];
 	delete []formes;

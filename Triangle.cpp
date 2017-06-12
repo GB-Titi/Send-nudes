@@ -4,9 +4,7 @@
 
 Triangle::Triangle(ulong color, int thick, bool remplir, uint x, uint y, uint x2, uint y2, uint x3, uint y3)
 	:Forme(color, thick, remplir, x, y), ancre2(x2, y2), ancre3(x3, y3)
-{
-//	cerr << "Construction d'un Triangle " << perimetre() << endl;
-}
+{}
 
 Triangle::Triangle(istream &is)
 	:Forme(is), ancre2(0, 0), ancre3(0, 0)
@@ -19,9 +17,7 @@ Triangle::Triangle(istream &is)
 }
 
 Triangle::~Triangle()
-{
-//	cerr << "Destruction de Triangle" << endl;
-}
+{}
 
 double Triangle::perimetre() const
 {

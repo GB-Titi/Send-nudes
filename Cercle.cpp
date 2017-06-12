@@ -3,9 +3,7 @@
 
 Cercle::Cercle(ulong color, int thick, bool remplir, uint x, uint y, uint _diametre)
 	: Forme(color, thick, remplir, x, y), diametre(_diametre)
-{
-//	cerr << "Construction d'un Cercle " << perimetre() << endl;
-}
+{}
 
 Cercle::Cercle(istream &is)
 	: Forme(is), diametre(0)
@@ -18,9 +16,7 @@ Cercle::Cercle(istream &is)
 }
 
 Cercle::~Cercle()
-{
-//	cerr << "Destruction de Cercle" << endl;
-}
+{}
 
 double Cercle::perimetre() const
 {

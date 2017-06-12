@@ -12,8 +12,8 @@ typedef unsigned long int ulong;
 class Point {
 	 
 	private :
-		static const uint taille = 3;
-		uint x, y;
+		static const uint taille = 3; // Est utilisé pour dessiner un point. 
+		uint x, y; // Les coordonnées du point.
 	
 	public :
 		Point (uint x, uint y);

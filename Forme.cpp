@@ -12,9 +12,7 @@ Forme::Forme (ulong _couleur, uint _thickness, bool _remplir, uint _x, uint _y)
 
 Forme::Forme (const Forme &orig)
 	: Forme (orig.couleur, orig.thickness, orig.remplir, orig.ancre.getx(), orig.ancre.gety())
-{
-//	cerr << "Construction par recopie de Forme";
-}
+{}
 
 Forme::Forme(istream &is)
 	: couleur(0), ancre(0,0)
@@ -23,19 +21,7 @@ Forme::Forme(istream &is)
 }
 
 Forme::~Forme()
-{
-	//cerr << "Destruction de Forme" << endl;
-}
-
-void Forme::setAncre(uint _x, uint _y)
-{
-	ancre.setxy(_x,_y);
-}
-
-bool Forme::isOver(uint x, uint y)
-{
-	return ancre.isOver(x,y);
-}
+{}
 
 void Forme::dessiner(EZWindow &w/*, bool isActive*/) const
 {

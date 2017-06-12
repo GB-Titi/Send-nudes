@@ -6,8 +6,8 @@
 class Rectangle : public Forme
 {
 	private :
-		uint hauteur;
-		uint largeur;
+		uint hauteur; // Hauteur du rectangle.
+		uint largeur; // Largeur du rectangle.
 		void ecrire (ostream &os) const override;
 		
 	public :
@@ -15,10 +15,23 @@ class Rectangle : public Forme
 		Rectangle(istream &is);
 		~Rectangle();
 		virtual void dessiner (EZWindow &fenetre/*, bool isActive = false*/) const;
-		inline uint getLargeur () const {return largeur;}
-		inline void setLargeur (uint _largeur) { largeur = _largeur; }
+		
+		// Fonction retournant la hauteur du rectangle.
+		//
 		inline uint getHauteur () const { return hauteur; }
+		
+		// Fonction permettant de modifier la hauteur du rectangle.
+		//
 		inline void setHauteur (uint _hauteur) { hauteur = _hauteur; }
+		
+		// Fonction retournant la largeur du rectangle.
+		//
+		inline uint getLargeur () const {return largeur;}
+		
+		// Fonction permettant de modifier la largeur du rectangle.
+		//
+		inline void setLargeur (uint _largeur) { largeur = _largeur; }
+		
 		double perimetre () const override;
 };
 #endif
