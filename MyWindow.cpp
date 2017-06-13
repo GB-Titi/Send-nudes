@@ -85,6 +85,8 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
      case EZKeySym::_7: if(pforme) pforme->setCouleur(ez_magenta); break;
      case EZKeySym::KP_Add: 	 if(pforme) pforme->addThick();	   break;
      case EZKeySym::KP_Subtract: if(pforme) pforme->subThick();    break;
+     case EZKeySym::plus: 		 if(pforme) pforme->addThick();	   break;
+     case EZKeySym::minus:		 if(pforme) pforme->subThick();    break;
      case EZKeySym::F: if(pforme) pforme->Remplir();    break;
 	 case EZKeySym::h:
       cout << "q : quitter" << endl
