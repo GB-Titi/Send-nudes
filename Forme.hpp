@@ -61,6 +61,8 @@ class Forme
 		//
 		bool isOver(uint x, uint y) {return ancre.isOver(x,y);}
 			
+		// Fonction permettant de dessiner une forme.
+		//
 		virtual void dessiner(EZWindow &fenetre/*, bool active = false*/) const;
 		
 		// Fonction "interrupteur" permettant de remplir ou vider une forme.

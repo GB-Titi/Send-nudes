@@ -13,6 +13,9 @@ class Cercle : public Forme {
 		Cercle(ulong color, int thick, bool remplir, uint x, uint y, uint diametre);
 		Cercle(istream &is);
 		~Cercle();
+		
+		// Fonction dessiner pour l'ellipse.
+		//
 		virtual void dessiner(EZWindow &w/*, bool isActive = false*/) const;
 		
 		// Fonction retournant le diamètre du cercle.
@@ -22,6 +25,7 @@ class Cercle : public Forme {
 		// Fonction permettant de modifier le diamètre du cercle.
 		//
 		inline void setDiametre (uint _diametre) { diametre = _diametre;}
+		
 		double perimetre() const override;
 };
 

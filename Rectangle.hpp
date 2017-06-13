@@ -14,6 +14,9 @@ class Rectangle : public Forme
 		Rectangle(ulong color, int thick, bool remplir, uint x, uint y, uint largeur, uint hauteur);
 		Rectangle(istream &is);
 		~Rectangle();
+		
+		// Fonction dessiner pour le rectangle.
+		//
 		virtual void dessiner (EZWindow &fenetre/*, bool isActive = false*/) const;
 		
 		// Fonction retournant la hauteur du rectangle.

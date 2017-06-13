@@ -13,6 +13,9 @@ class Carre : public Forme {
 		Carre(ulong color, int thick, bool remplir, uint x, uint y, uint cote);
         Carre(istream &is);
         ~Carre();
+        
+        // Fonction dessiner pour l'ellipse.
+		//
         virtual void dessiner(EZWindow &w/*, bool isActive = false*/) const;
 
 		// Fonction retournant la valeur du côté du carré.
